@@ -1,0 +1,16 @@
+extends layout
+
+block content
+ .container
+  h1 #{title}
+  != messages()
+  .table-responsive
+   table(class='table table-striped table-bordered')
+    tr
+     th Category Title
+     th 
+    each category, i in categories
+     tr
+      td #{category.title}
+      td
+       a(class='btn btn-tiny btn-default', href='/manage/categories/edit/#{category._id}') Edit
